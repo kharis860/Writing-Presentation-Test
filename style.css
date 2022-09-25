@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  font-family: "poppins", sans-serif;
+  color: rgb(60, 96, 164);
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 50px;
+}
+.logo {
+  font-weight: 600;
+  font-size: 24px;
+}
+ul {
+  display: flex;
+}
+ul li {
+  margin: 0 10px;
+  padding: 5px 10px;
+  font-weight: 600;
+  font-size: 14px;
+}
+ul li a:hover {
+  background-color: rgb(60, 96, 164);
+  color: #fff;
+}
+section {
+  display: flex;
+  justify-content: center;
+}
+.deskripsi {
+  margin-right: 500px;
+}
+.deskripsi h1 {
+  font-size: 60px;
+}
+.deskripsi a {
+  padding: 20px 40px;
+  font-size: 24px;
+  border-radius: 40px;
+  align-items: center;
+  display: inline-block;
+  color: #fff;
+  background-color: rgb(60, 96, 164);
+}
+.teks {
+  font-size: 34px;
+  font-weight: 600;
+}
