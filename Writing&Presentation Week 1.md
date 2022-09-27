@@ -106,11 +106,13 @@ Menggulas sedikit materi yang telah saya paparkan di atas. Commit berfungsi untu
 
 2. Masukkan perintah “git add .” untuk menambahkan semua file yang kita miliki ke dalam sebuah repository yang telah kita pilih sebelumnya.
 
+    
     ![gambar](https://user-images.githubusercontent.com/83742894/192590077-cc7682a6-24f3-4e5e-bbc8-51398db4c61f.png)
 
 3. untuk melakukan commit, masukkan perintah git commit -m “”. Fungsinya adalah untuk melakukan commit terhadap project yang kita miliki beserta menambahkan pesan di dalamnya.
 
-    ![gambar](https://user-images.githubusercontent.com/83742894/192590127-f15dd5a6-aab1-4d2d-9bc3-21038919a8a3.png)
+    
+    =![gambar](https://user-images.githubusercontent.com/83742894/192590127-f15dd5a6-aab1-4d2d-9bc3-21038919a8a3.png)
 
 
 ### Publish Aplikasi ke GitHub
@@ -123,8 +125,10 @@ Untuk melakukan publish project aplikasi kita ke GitHub, kita harus melakukan gi
 ![gambar](https://user-images.githubusercontent.com/83742894/192591484-d1184983-157c-4e6b-aa4e-88eb528e4673.png)
 
 3. Setelah itu berikan perintah git push beserta alamat dari repository kita. Selanjutnya, cek pada akun GitHub anda untuk memastikan sekali lagi bahwa project anda telah terupload 
+
 ![gambar](https://user-images.githubusercontent.com/83742894/192591498-cb25254f-2810-4ce4-b30b-57fca70eae34.png)
-5. Setelah itu berikan perintah git push beserta alamat dari repository kita. Selanjutnya, cek pada akun GitHub anda untuk memastikan sekali lagi bahwa project anda telah terupload 
+4. Setelah itu berikan perintah git push beserta alamat dari repository kita. Selanjutnya, cek pada akun GitHub anda untuk memastikan sekali lagi bahwa project anda telah terupload 
+
 ![gambar](https://user-images.githubusercontent.com/83742894/192591509-241c8308-7db9-4f85-b0cf-4cc64c998b86.png)
 
 
@@ -170,8 +174,9 @@ Kita bisa membuat HTML sederhana dengan mudah, langkah-langkah untuk membuat HTM
 ![gambar](https://user-images.githubusercontent.com/83742894/192595360-a99c5363-1120-4329-9228-7c87a4c87c07.png)
 
 3. program sederhana kita sudah berhasil dibuat
-![gambar](https://user-images.githubusercontent.com/83742894/192595386-985e1994-91db-4a12-9929-488fcf9d0ca4.png)
-![gambar](https://user-images.githubusercontent.com/83742894/192595403-68985cfe-8436-4456-9aa5-218fe781a5b9.png)
+
+    ![gambar](https://user-images.githubusercontent.com/83742894/192595386-985e1994-91db-4a12-9929-488fcf9d0ca4.png)
+    ![gambar](https://user-images.githubusercontent.com/83742894/192595403-68985cfe-8436-4456-9aa5-218fe781a5b9.png)
 
 ### Menjalankan HTML Secara Manual dan Menggunakan Live Server dari VS Code
 
@@ -186,10 +191,12 @@ Cara agar kita tidak perlu merefresh browser ketika terjadi perubahan adalah den
     ![gambar](https://user-images.githubusercontent.com/83742894/192596301-f92230d5-4034-4a2c-a023-b443edb96e20.png)
 
 2. Maka akan muncul notifikasi seperti ini
-![gambar](https://user-images.githubusercontent.com/83742894/192596322-c35e299c-cb86-4581-aae5-12ae283cb470.png)
+
+    ![gambar](https://user-images.githubusercontent.com/83742894/192596322-c35e299c-cb86-4581-aae5-12ae283cb470.png)
 
 3. File HTML sudah berhasil di jalankan
-![gambar](https://user-images.githubusercontent.com/83742894/192596349-f72387d6-dfb5-40f0-876d-59eb3ac5d76f.png)
+
+    ![gambar](https://user-images.githubusercontent.com/83742894/192596349-f72387d6-dfb5-40f0-876d-59eb3ac5d76f.png)
 
 
 ### Tag HTML Populer
@@ -215,6 +222,7 @@ Beberapa tag HTML yang populer adalah tag img, h1, a dan br. Contoh implementasi
 
 ```
 Kemudian hasilnya adalah sebagai berikut: 
+
 ![gambar](https://user-images.githubusercontent.com/83742894/192597051-04a52dca-6431-4f7e-b475-7caacaa6a941.png)
 ### Pengimplementasian Semantic HTML
 Menggunakan Semantic HTML artinya menggunakan elemen HTML sesuai dengan kebutuhan konten yang nantinya akan kita tampilkan di dalam project yang kita buat. Kegunaan dari penggunaan semantic HTML sendiri antara lain: 
@@ -266,10 +274,12 @@ Kode tersebut akan menghasilkan tampilan sederhana seperti ini:
 ### Mempublish Website sampai ke Tahap Deployment
 Setelah kita berhasil membuat program sederhana pertama kita, kita bisa melakukan deploy terhadap project tersebut. Deploy merupakan sebuah proses menyebarkan aplikasi yang sudah kita kerjakan agar dapat diakses orang lain secara online. Cara melakukannya adalah sebagai berikut:
 1. buka netlify.com
-![gambar](https://user-images.githubusercontent.com/83742894/192598203-8a7df959-8590-4f5e-b976-514882967029.png)
+
+    ![gambar](https://user-images.githubusercontent.com/83742894/192598203-8a7df959-8590-4f5e-b976-514882967029.png)
 
 2. cukup upload project anda, maka project tersebut sudah terdeploy dengan baik. Anda dapat membuka web sederhana pada link berikut:  https://tangerine-macaron-6d9e3a.netlify.app
-![gambar](https://user-images.githubusercontent.com/83742894/192598224-4c298d41-71be-43dd-9b25-1aad247f404c.png)
+
+    ![gambar](https://user-images.githubusercontent.com/83742894/192598224-4c298d41-71be-43dd-9b25-1aad247f404c.png)
 
 
 ## CSS
@@ -312,6 +322,7 @@ Contoh penggunaannya adalah sebagai berikut:
 
     ```
 3. Eksternal CSS yaitu manaruh CSS pada file terpisah kemudian nantinya memakai tag penghubung di dalam file HTML. Contoh penggunaannya adalah sebagai berikut:
+    
     ![gambar](https://user-images.githubusercontent.com/83742894/192601601-0c605fd8-cd24-46f1-88fb-d50c1fab7989.png)
 
     ```
@@ -566,7 +577,8 @@ for (let i= 1; i<31; i++){
 
 ```
 Dan hasilnya adalah yang ada pada gambar berikut: 
-![gambar](https://user-images.githubusercontent.com/83742894/192605976-96294b40-d183-4235-a588-3a1d660b9449.png)
+
+  ![gambar](https://user-images.githubusercontent.com/83742894/192605976-96294b40-d183-4235-a588-3a1d660b9449.png)
 
 ### menerapkan salah satu algoritma dengan JavaScript 
 Latihan untuk menerapkan Algoritma ke Javascript
@@ -588,7 +600,8 @@ console.log("2 jam jika di convert ke detik, maka akan ada sebanyak "+satuanDeti
 
 ```
 hasilnya seperti ini: 
-![gambar](https://user-images.githubusercontent.com/83742894/192606369-56d283e8-b42d-4144-bfe1-a046625e8345.png)
+
+  ![gambar](https://user-images.githubusercontent.com/83742894/192606369-56d283e8-b42d-4144-bfe1-a046625e8345.png)
 
 ## JavaScript Dasar
 
