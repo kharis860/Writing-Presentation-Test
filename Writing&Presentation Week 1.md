@@ -144,6 +144,134 @@ Mungkin kita agak asing dengan istilah cloning ini. Inti dari aksi cloning ini a
 ![gambar](https://user-images.githubusercontent.com/83742894/192592435-b14fe477-91b3-4b65-9084-595e9b579ea7.png)
 
 ## HTML
+
+
+
+### Peran HTML pada Web Development
+
+- HTML merupakan singkatan dari Hypertext Markup Language (bukan merupakan bahasa pemrograman), HTML memiliki peran untuk menampilkan konten pada browser berupa kerangka statis dari sebuah aplikasi seperti: teks, gambar, video, link dan masih banyak lagi. 
+### Tools Pendukung dalam menggunakan HTML
+
+Ketika kita akan menggunakan HTML, pastinya kita memerlukan tools/software tambahan untuk menjalankannya. Tools yang harus kita siapkan untuk menjalankan HTML adalah browser dan code editor. 
+- Browser yang biasanya saya pakai adalah mozila firefox
+![gambar](https://user-images.githubusercontent.com/83742894/192594834-de11bde7-1811-4b4b-97c6-466a1ff75100.png)
+
+- Sedangkan code editor yang biasa saya gunakan adalah Visual Studio Code
+![gambar](https://user-images.githubusercontent.com/83742894/192594865-e40c9712-3ad2-4aef-be95-11537e4afeeb.png)
+
+### Membuat HTML Sederhana
+Kita bisa membuat HTML sederhana dengan mudah, langkah-langkah untuk membuat HTML sederhana adalah sebagai berikut: 
+
+1. Buka VS Code lalu buat file baru dengan nama apapun dengan tipe file .html. tapi untuk best practicenya kita namai file kita dengan nama index.html
+
+    ![gambar](https://user-images.githubusercontent.com/83742894/192595317-a1d31b41-958c-4038-9dcc-bba0acf379b7.png)
+
+2. Ketik tanda “!” sebagai shortcut untuk membuat template HTML awal yang nantinya menghasilkan baris kode sebagai berikut:
+![gambar](https://user-images.githubusercontent.com/83742894/192595360-a99c5363-1120-4329-9228-7c87a4c87c07.png)
+
+3. program sederhana kita sudah berhasil dibuat
+![gambar](https://user-images.githubusercontent.com/83742894/192595386-985e1994-91db-4a12-9929-488fcf9d0ca4.png)
+![gambar](https://user-images.githubusercontent.com/83742894/192595403-68985cfe-8436-4456-9aa5-218fe781a5b9.png)
+
+### Menjalankan HTML Secara Manual dan Menggunakan Live Server dari VS Code
+
+#### Menjalankan HTML Secara Manual
+1. Untuk menjalankan file HTML secara manual, kita bisa melakukan klik kanan pada file, lalu klik open in default/other browser. Tetapi, kekurangan jika menggunakan metode ini kita harus merefresh browser tiap kita melakukan perubahan pada kode yang kita miliki
+![gambar](https://user-images.githubusercontent.com/83742894/192596050-48e720ba-efa2-4be0-ba34-11cd5e6e47f4.png)
+
+Cara agar kita tidak perlu merefresh browser ketika terjadi perubahan adalah dengan menggunakan fitur Go live. Cara menggunakan Go live adalah sebagai berikut: 
+#### Menjalankan HTML Menggunakan Live Server
+1. Klik pada tombol Go Live
+
+    ![gambar](https://user-images.githubusercontent.com/83742894/192596301-f92230d5-4034-4a2c-a023-b443edb96e20.png)
+
+2. Maka akan muncul notifikasi seperti ini
+![gambar](https://user-images.githubusercontent.com/83742894/192596322-c35e299c-cb86-4581-aae5-12ae283cb470.png)
+
+3. File HTML sudah berhasil di jalankan
+![gambar](https://user-images.githubusercontent.com/83742894/192596349-f72387d6-dfb5-40f0-876d-59eb3ac5d76f.png)
+
+
+### Tag HTML Populer
+Beberapa tag HTML yang populer adalah tag img, h1, a dan br. Contoh implementasi sederhananya adalah sebagai berikut: 
+
+```
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catatan</title>
+  </head>
+  <body>
+    <h1>Hallo teman-teman ini adalah HTML saya</h1>
+    <h2>kita bisa menuju ke google</h2>
+    <img src="https://tinyurl.com/ycxmkwjp" alt="" />
+    <br />
+    <a href="https://www.google.com">Klik untuk menuju ke google</a>
+  </body>
+</html>
+
+```
+Kemudian hasilnya adalah sebagai berikut: 
+![gambar](https://user-images.githubusercontent.com/83742894/192597051-04a52dca-6431-4f7e-b475-7caacaa6a941.png)
+### Pengimplementasian Semantic HTML
+Menggunakan Semantic HTML artinya menggunakan elemen HTML sesuai dengan kebutuhan konten yang nantinya akan kita tampilkan di dalam project yang kita buat. Kegunaan dari penggunaan semantic HTML sendiri antara lain: 
+1. Meningkatkan accessiblity
+2. Meningkatkan SEO
+3. Lebih mudah dimaintain
+
+#### Berikut beberapa tag yang mengikuti semantic HTML: 
+![gambar](https://user-images.githubusercontent.com/83742894/192597389-3d6e26b1-a68d-4bfe-8cb6-d1051aa10b1d.png)
+
+Sedangkan untuk implementasi sederhana dari semantic HTML adalah sebagai berikut: 
+```
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Latihan CSS</title>
+  </head>
+  <body>
+    <nav>
+      <a href="#" class="logo">Kharis</a>
+      <ul class="nav-menu">
+        <li><a href="">Home</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Contacts</a></li>
+      </ul>
+    </nav>
+    <section>
+      <div class="deskripsi">
+        <h1 class="teks">hai.. I'm Kharis</h1>
+        <a href="#">Hire Me</a>
+      </div>
+      <div>
+        <img src="kharis.jpg" alt="" width="200px" />
+      </div>
+    </section>
+  </body>
+</html>
+
+```
+
+Kode tersebut akan menghasilkan tampilan sederhana seperti ini: 
+![gambar](https://user-images.githubusercontent.com/83742894/192598077-187a952e-290c-4d71-9e9e-7e32942ca3fa.png)
+
+
+### Mempublish Website sampai ke Tahap Deployment
+Setelah kita berhasil membuat program sederhana pertama kita, kita bisa melakukan deploy terhadap project tersebut. Deploy merupakan sebuah proses menyebarkan aplikasi yang sudah kita kerjakan agar dapat diakses orang lain secara online. Cara melakukannya adalah sebagai berikut:
+1. buka netlify.com
+![gambar](https://user-images.githubusercontent.com/83742894/192598203-8a7df959-8590-4f5e-b976-514882967029.png)
+
+2. cukup upload project anda, maka project tersebut sudah terdeploy dengan baik. Anda dapat membuka web sederhana pada link berikut:  https://tangerine-macaron-6d9e3a.netlify.app
+![gambar](https://user-images.githubusercontent.com/83742894/192598224-4c298d41-71be-43dd-9b25-1aad247f404c.png)
+
+
 ## CSS
 ## Algoritma & Struktur Data
 ## JavaScript Dasar
