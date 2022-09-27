@@ -273,6 +273,322 @@ Setelah kita berhasil membuat program sederhana pertama kita, kita bisa melakuka
 
 
 ## CSS
+
+
+
+### Peran CSS pada Web Development
+- CSS merupakan kepanjangan dari Cascading Style Sheets
+- Peran yang dimiliki oleh CSS dalam web development yaitu sebagai sebuah bahasa style sheet yang berfungsi untuk memberikan styling atau hiasan kepada elemen HTML yang telah kita tulis agar nampak lebih indah dan mempunyai sebuah layout tertentu. 
+- Mengubah warna, font, mengatur tata letak dan lain sebagainya
+
+### Menyisipkan CSS ke dalam File HTML
+CSS digunakan untuk memberi styling kepada element HTML yang kita miliki, berarti kita harus menyisipkannya di dalam file HTML yang kita miliki. Untuk melakukannya terdapat 3 cara yang dapat kita lakukan antara lain: 
+1. Inline Styles yaitu menambahkan CSS langsung pada atribut HTML
+Contoh penggunaannya adalah sebagai berikut: 
+    ```
+    <img style="width: 150px; border: 1px solid red src="https://tinyurl.com/ycxmkwjp" alt="" />
+    ```
+2. Internal CSS yaitu menyisipkan css di dalam file HTML
+Contoh penggunaannya adalah sebagai berikut: 
+    ```
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Catatan</title>
+        <style>
+          img {
+            width: 150px;
+            border: 1px solid red;
+          }
+        </style>
+      </head>
+      <body>
+        <img src="https://tinyurl.com/ycxmkwjp" alt="" />
+      </body>
+    </html>
+
+    ```
+3. Eksternal CSS yaitu manaruh CSS pada file terpisah kemudian nantinya memakai tag penghubung di dalam file HTML. Contoh penggunaannya adalah sebagai berikut:
+    ![gambar](https://user-images.githubusercontent.com/83742894/192601601-0c605fd8-cd24-46f1-88fb-d50c1fab7989.png)
+
+    ```
+    img {
+      width: 150px;
+      border: 1px solid red;
+      }
+    ```
+### Sintaks Dasar CSS
+Sintaks dasar dari css biasa ditulis dengan 4 selektor sebagai berikut: 
+1. (*) (Global), selektor ini berpengaruh terhadap semua elemen yang ada di dalam file HTML. Contoh penggunaannya adalah sebagai berikut:
+    ```
+    * {
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      list-style: none;
+    }
+    ```
+2. Tag selektor ini hanya memilik elemen sesuai tag yang dipilih. Contoh penggunaannya adalah sebagai berikut:
+    ```
+    section {
+      display: flex;
+      justify-content: center;
+      }
+
+    ```
+3. Class selektor ini dapat memberikan style pada elemen mana saja yang diberikan classname tertentu. 1 classname dapat digunakan ke lebih dari 1 elemen html. Contoh penggunaannya adalah sebagai berikut:
+    ```
+    .teks {
+      font-size: 34px;
+      font-weight: 600;
+      }
+
+    ```
+4. Id selektor ini memberikan style pada elemen html namun lebih spesifik daripada class. Dimana id hanya dapat digunakan pada 1 elemen html tertentu saja. Contoh penggunaannya adalah sebagai berikut:
+    ```
+    #deskripsi a {
+      padding: 20px 40px;
+      font-size: 24px;
+      border-radius: 40px;
+      align-items: center;
+      display: inline-block;
+      }
+
+    ```
+### Styling CSS pada sebuah Halaman HTML
+Berikut adalah contoh penerapan styling pada sebuah landing page sederhana: 
+- HTML
+    ```
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Latihan CSS</title>
+      </head>
+      <body>
+        <nav>
+          <a href="#" class="logo">Kharis</a>
+          <ul class="nav-menu">
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contacts</a></li>
+          </ul>
+        </nav>
+        <section>
+          <div class="deskripsi">
+            <h1 class="teks">hai.. I'm Kharis</h1>
+            <a href="#">Hire Me</a>
+          </div>
+          <div>
+            <img src="kharis.jpg" alt="" width="200px" />
+          </div>
+        </section>
+      </body>
+    </html>
+    ```
+- CSS
+    ```
+    * {
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      list-style: none;
+      font-family: "poppins", sans-serif;
+      color: rgb(60, 96, 164);
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 50px;
+    }
+    .logo {
+      font-weight: 600;
+      font-size: 36px;
+    }
+    ul {
+      display: flex;
+    }
+    ul li {
+      margin: 0 20px;
+      padding: 5px 10px;
+      font-weight: 600;
+      font-size: 16px;
+    }
+    ul li a:hover {
+      background-color: rgb(60, 96, 164);
+      color: #fff;
+      border-radius: 10px;
+      animation-delay: 2ms;
+      transition: 0.5s;
+      padding: 3px 3px;
+    }
+    section {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      top: 100px;
+    }
+    .deskripsi {
+      margin-right: 400px;
+    }
+    .deskripsi h1 {
+      font-size: 60px;
+    }
+    .deskripsi a {
+      padding: 10px 20px;
+      font-size: 22px;
+      border-radius: 40px;
+      align-items: center;
+      display: inline-block;
+      color: #fff;
+      background-color: rgb(60, 96, 164);
+    }
+    .deskripsi a:hover {
+      padding: 10px 20px;
+      font-size: 22px;
+      border-radius: 40px;
+      align-items: center;
+      display: inline-block;
+      border: 2px solid rgb(60, 96, 164);
+      color: rgb(60, 96, 164);
+      background-color: #fff;
+      transition: 0.5s;
+      animation: ease-in;
+    }
+    .teks {
+      font-size: 34px;
+      font-weight: 600;
+    }
+    ```
+Dari kode HTML dan CSS diatas menghasilkan tapilan sebagai berikut: 
+![gambar](https://user-images.githubusercontent.com/83742894/192604141-1f2a319c-ce16-4abe-b190-9055f2d9ea26.png)
+
+### Flexbox
+Flexbox merupakan sebuah mode layout yang digunakan untuk mengatur tata letak elemen yang ada di dalam suatu halaman web. Flexbox juga disebut sebagai cara untuk mengatur layout dari sebuah tampilan web. Contoh flexbox adalah sebagai berikut: 
+
+- HTML
+    ```
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Catatan</title>
+      </head>
+      <body>
+        <div class="container">
+          <div class="item">kotak</div>
+          <div class="item">kotak</div>
+          <div class="item">kotak</div>
+          <div class="item">kotak</div>
+          <div class="item">kotak</div>
+          <div class="item">kotak</div>
+          <div class="item">kotak</div>
+          <div class="item">kotak</div>
+          <div class="item">kotak</div>
+          <div class="item">kotak</div>
+        </div>
+      </body>
+    </html>
+
+    ```
+- CSS
+    ```
+    .container {
+      display: flex;
+      border: 3px solid blue;
+      justify-content: space-between;
+      }
+    .item {
+      border: 1px solid black;
+      width: 100px;
+      height: 100px;
+      background-color: yellow;
+      }
+    ```
+Dari kode HTML dan CSS di atas menghasilkan tampilan sebagai berikut: 
+![gambar](https://user-images.githubusercontent.com/83742894/192604840-d31c8e93-d740-4c52-b95b-c924e92b4208.png)
+
+
 ## Algoritma & Struktur Data
+
+
+
+### Perbedaan Algoritma dan Struktur Data
+- Algoritma adalah sebuah deretan langkah-langkah yang disusun untuk menyelesaikan suatu masalah
+- Sedangkan struktur data merupakan penyusunan data di dalam sebuah media penyimpanan komputer sehingga data tersebut dapat digunakan dengan efisien 
+
+### Manfaat Algoritma dan Struktur Data
+- Manfaat dari penggunaan algoritma adalah kita dapat memahami bagaimana alur dari sebuah bahasa pemrograman bekerja. Sehingga, jika kita memahami sebuah algoritma daari suatu permasalahan kita isa menterjemahkannya ke dalam bahasa pemrograman apa saja dan mengimplementasikannya
+- Manfaat dari penggunaan struktur data adalah memudahkan kita dalam mengorganisir sebuah data yang kita memiliki sehingga memiliki tampilan yang rapi. Sehingga, kita bisa dengan mudah mengolah data tersebut menjadi informasi dengan cepat dan mudah
+
+### Membuat algoritma sederhana
+Contoh algoritma sederhana: 
+```
+Start
+Declare variable “nama”
+Declare variable “informasi”
+Declare variable “gabungkan”
+Fill “nama” variable with string “Nama saya Kharis”
+Fill “informasi” variable with string “, Saya mengikuti Studi Independen Skilvul”
+Fill “gabungkan” variable with “nama”.concat(“informasi”)
+Display “gabungkan” variable
+stop
+
+```
+
+### Menerapkan algoritma ke dalam bahasa pemrograman
+Hasil dari penerapan algoritma diatas ke bahasa pemrograman javascript adalah sebagai berikut: 
+```
+let nama = “Nama saya Kharis”
+let informasi = ', Saya mengikuti Studi Independen Skilvul'
+let gabungkan = nama.concat(informasi);
+console.log(gabungkan)
+
+```
+### Pendekatan menyelesaikan suatu masalah untuk diselesaikan melalui program 
+Kita coba buat sebuah program sederhana
+Kharis ingin menampilkan angka ganjil yang terdapat di antara 1-30. Maka penyelesaiannya adalah sebagai berikut: 
+```
+for (let i= 1; i<31; i++){
+    if (i%2== 1){
+        console.log(i)
+    }
+}
+
+```
+Dan hasilnya adalah yang ada pada gambar berikut: 
+![gambar](https://user-images.githubusercontent.com/83742894/192605976-96294b40-d183-4235-a588-3a1d660b9449.png)
+
+### menerapkan salah satu algoritma dengan JavaScript 
+Latihan untuk menerapkan Algoritma ke Javascript
+Kita buat terlebih dahulu algoritma yang mengubah satuan waktu 2 jam menjadi satuan detik yang diharapkan menghasilkan 7200 detik
+```
+Declare “jam” variable
+Fill “jam” variable with number 2
+Declare “satuanDetik” variable
+Fill “satuanDetik” variable with “jam” variable X 3600 number
+Display "2 jam jika di convert ke detik, maka akan ada sebanyak "+satuanDetik+" Detik"
+```
+
+Maka kode javascriptnya akan menjadi seperti berikut ini: 
+```
+console.log("====Convert satuan jam ke detik====")
+let jam= 2
+let satuanDetik= jam*3600
+console.log("2 jam jika di convert ke detik, maka akan ada sebanyak "+satuanDetik+" Detik")
+
+```
+hasilnya seperti ini: 
+![gambar](https://user-images.githubusercontent.com/83742894/192606369-56d283e8-b42d-4144-bfe1-a046625e8345.png)
+
 ## JavaScript Dasar
 
