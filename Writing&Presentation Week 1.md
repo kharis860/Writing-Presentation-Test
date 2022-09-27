@@ -592,3 +592,182 @@ hasilnya seperti ini:
 
 ## JavaScript Dasar
 
+
+
+### Peran JavaScript pada web development
+- JavaScript merupakan sebuah bahasa pemrograman yang bersifat dynamic sehingga menjadi sebuah bahasa pemrograman yang sangat powerful jika digunakan untukk mengolah logic yang ada pada sebuah website. 
+- Peran yang dimiliki oleh javaScript ketika diterapkan pada sebuah website adalah memberikan sebuah tampilan website yang interaktif dan dinamis
+### Menjalankan JavaScript
+- Javascript dapat dijalankan di dalam browser yang sudah kita kenal seperti Mozila Firefox, Google Chrome, Internet Explorer ataupun Safari Browser
+- Untuk bisa menggunakan sebuah file JavaScript kita harus mempunyai file HTML untu dibuka di browser terlebih dahulu sebelum nantinya kita menggunakan console untuk melihat hasil display dari kode yang kita tuliskan
+    ![gambar](https://user-images.githubusercontent.com/83742894/192607028-9744d703-280b-4a5a-a8bc-da0807bae4bc.png)
+    ![gambar](https://user-images.githubusercontent.com/83742894/192607039-ff38d1be-dd7e-45aa-9fea-c1e7a2ea7d90.png)
+
+### membedakan berbagai tipe data
+Terdapat 6 fundamental tipe dara pada javascript, yaitu sebagai berikut: 
+1. Number yaitu tipe data yang menampung semua angka, termasuk angka desimal
+    ```
+    let umur = 20;
+    let apel = 10;
+    ```
+2. String
+    ```
+    let nama = "Nama saya kharis"
+    let keterangan = "Sekarang saya sudah semester 5"
+    ```
+3. Boolean
+    ```
+    let sudahMakan = true;
+    let sudahMandi = false;
+    ```
+4. Null
+    ```
+    let isiDompet = null;
+    ```
+5. Undefined
+    ```
+    let nilai = undefined;
+    ```
+6.	Object
+    ```
+    let mobil = {
+      roda: 4,
+      pintu: 4,
+      bagasi: 1,
+      };
+    ```
+
+### menggunakan operator
+Operator merupakan sebuah instruksi yang digunakan untuk melakukan suatu proses
+Terdapat 6 jenis operator: 
+1. Assignment operator biasa digunakan untuk menyimpan nilai pada sebuah variabel seperti: 
+    ```
+    let nama = "Nama saya kharis"
+    ```
+2. Mathematical Assignment operator digunakan untuk menyimpan nilai yang berkaitan dengan matematika seperti: 
+    ```
+    let apel = 10;
+    ```
+3. Increment and Decrement operator biasa digunakan untuk menambah atau mengurangi nilai sebesar 1, contohnya: 
+    ```
+    let meja = 10;
+    meja++;
+    console.log(meja);
+    meja--;
+    console.log(meja);
+    ```
+4. Arithmetic operator merupakan operator yang digunakan untuk keperluan operasi hitung matematika seperti: 
+    - Penjumlahan (+)
+    - Pengurangan (-)
+    - Perkalian (*)
+    - Pembagian (/)
+    - Modulus (%)
+    ```
+    console.log(1+2)//print 3
+    console.log(4+1)//print 5
+    console.log(2*2)//print 4
+    console.log(8/2)//print 4
+    console.log(8%2)//print 0
+
+    ```
+5. Comparison operator biasanya digunakan untuk membandingkan suatu nilai dengan nilai lainnya untuk mendapatkan nilai true atau false
+    - Lebih kecil dari: <
+    - Lebih besar dari: >
+    - Lebih kecil sama dengan: <=
+    - Lebih besar sama dengan: >=
+    - Sama dengan: ===
+    - Tidak sama dengan: !== 
+    
+6. Logical operator biasa digunakan untuk conditional pada sebuah program yang menghasilkan nilai boolean
+    #### AND operator: &&
+    ![gambar](https://user-images.githubusercontent.com/83742894/192609549-37704669-af68-4c0f-b3bf-79073b1da580.png)
+    ![gambar](https://user-images.githubusercontent.com/83742894/192609571-8691e38e-7cd7-4a78-9864-2dfe56d78f4e.png)
+
+    #### OR operator: ||
+    ![gambar](https://user-images.githubusercontent.com/83742894/192609591-06431c6a-b3e4-463a-bed4-3b1ac0aafbb2.png)
+    ![gambar](https://user-images.githubusercontent.com/83742894/192609609-fd01bb0b-b600-40d4-bf05-8b49162e5447.png)
+
+    #### NOT operator: !
+    ![gambar](https://user-images.githubusercontent.com/83742894/192609636-e19360b6-2d2c-4b1b-a069-917ec7c5bc48.png)
+
+### membedakan control flow (conditional dan looping)
+#### Conditional
+If .. else merupakan sebuah conditional statemen yang dipakai jika hanya tersedia 2 pilihan kondisi. Contoh penggunaannya adalah sebagai berikut: 
+```
+let keadaan = "lapar";
+
+if (keadaan == "lapar") {
+  console.log("Makan");
+} else {
+  console.log("Lanjutkan aktivitas");
+}
+```
+
+If .. else if .. else merupakan sebuah conditional statemen yang dipakai jika hanya tersedia 2 pilihan kondisi. Contoh penggunaannya adalah sebagai berikut: 
+```
+let keadaan = "sedikit lapar";
+
+if (keadaan == "lapar") {
+  console.log("Makan");
+} else if (keadaan == "sedikit lapar") {
+  console.log("Sebentar lagi makan ya");
+} else {
+  console.log("Lanjutkan aktivitas");
+}
+```
+
+Switch case else merupakan sebuah conditional statemen yang dipakai jika tersedia lebih dari 3 pilihan kondisi (memiliki banyak kondisi). Contoh penggunaannya adalah sebagai berikut:
+```
+let saklar = 1;
+switch (saklar) {
+  case 1:
+    console.log("Lampu no 1 menyala");
+    break;
+  case 2:
+    console.log("Lampu no 2 menyala");
+    break;
+  case 3:
+    console.log("Lampu no 3 menyala");
+    break;
+  case 4:
+    console.log("Lampu no 4 menyala");
+    break;
+  case 5:
+    console.log("Lampu no 5 menyala");
+    break;
+  case 6:
+    console.log("Lampu no 6 menyala");
+    break;
+  default:
+    console.log("Semua lampu mati");
+}
+```
+#### Looping
+Looping merupakan sebuah statement yang mengulang sebuah instruksi hingga kondisi terpenuhi atau jika kondisi stop/berhenti tercapai. Terdapat 3 loop pada JavaScript: 
+
+For loop biasa digunakan jika kita sudah mengetahui berapa jumlah loop yang akan kita display. Contoh penggunaannya adalah sebagai berikut: 
+```
+for (let i = 0; i < 11; i++) {
+  console.log("Pasien nomor urut: " + i);
+}
+```
+
+While loop biasa digunakan jika kita belum mengetahui jumlah loop yang akan di display dan untuk menjalankannya harus ada keadaan yang memenuhi terlebih dahulu. Loop akan terus berjalan jika kondisi bernilai true. Contoh penggunaannya adalah sebagai berikut:
+```
+let pasien = 1;
+while (pasien < 11) {
+  console.log("Pasien nomor urut: " + pasien);
+  pasien++;
+}
+
+```
+
+Do while loop biasa digunakan jika kita belum mengetahui jumlah loop yang akan di display dan loop akan dijalankan 1 kali hingga pada loop selanjutnya harus ada keadaan yang memenuhi terlebih dahulu. Loop akan terus berjalan jika kondisi bernilai true. Contoh penggunaannya adalah sebagai berikut:
+```
+let pasien = 1;
+do {
+  console.log("Pasien nomor urut: " + pasien);
+  pasien++;
+} while (pasien < 11);
+```
+
