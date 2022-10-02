@@ -320,19 +320,99 @@
         //penggunaan classlist.remove
         dummy.classList.remove("paragraf");
         ```
-    - a
-    
-- a
-- 
-
-
-
-
-
-
-
-
-
-
 
 ## DOM Event
+- Agar event dapat terjadi, kita harus menambahkannya ke dalam HTML. Di dalam JavaScript terdapat 3 cara untuk menambahkan event yaitu: 
+    - HTML attribute
+        ```
+        <button onclick="alert('kalkulasi Anda berhasil')">calculate</button>
+        ```
+    - Event property
+        ```
+        let btn = document.getElementById("btn1");
+        btn.onclick = function () {
+          alert("input berhasil");
+        };
+
+        ```
+    - addEventListener()
+        ```
+        let btn = document.getElementById("btn1");
+
+        btn.addEventListener("click", evt);
+
+        function evt() {
+          alert("input berhasil");
+        }
+        ```
+- DOM event merupakan kejadian/kegiatan/interaksi yang terjadi pada website yang bisa terjadi karena aksi yang dilakukan oleh user di dalam sebuah browser. Beberapa event yang sering digunakan pada DOM event antara lain: 
+    - Click merupakan event dalam JavaScript yang terjadi jika sebuah tombol atau element pada HTML ditekan/diklik. Contoh penggunaan
+        ```
+        let btn = document.getElementById("btn1");
+
+        btn.addEventListener("click", evt);
+        function evt() {
+          alert("input berhasil");
+        }
+        ```
+    - Submit merupakan event dalam JavaScript yang biasa digunakan untuk button yang terdapat pada sebuah form. Contoh penggunaan:
+        ```
+        let btn = document.getElementById("btnSubmit");
+
+        btn.addEventListener("submit", kirim);
+
+        function submit() {
+          alert("submit telah berhasil");
+        }
+
+        ```    
+    - Focus merupakan event pada javascript yang memberikan kesan aktif pada sebuah halaman website, event ini biasanya digunakan pada input, select atau link. Contoh penggunaan:
+        ```
+        let uname = document.getElementById("uname");
+
+        uname.addEventListener("focus", fokus);
+
+        function fokus() {
+          uname.style.background = "red";
+        }
+
+        ```
+    - Blur merupakan event pada JavaScript yang memberikan kesan tidak aktif (hilang fokus) pada element di sebuah dokumen HTML. Event ini biasa digunakan pada form, event ini aktif setelah user meninggalkan form tersebut. Contoh penggunaan: 
+        ```
+        let pass = document.getElementById("pass");
+
+        pass.addEventListener("blur", blurr);
+
+        function blurr() {
+          pass.style.background = "";
+        }
+        ```
+    - Mouseover merupakan event pada JavaScript yang terjadi ketika pointer mouse bergerak pada sebuah element HTML atau ke salah satu children sebuah element HTML. Contoh penggunaan: 
+        ```
+        let link = document.getElementById("switchLink");
+
+        link.addEventListener("mouseover", turnRed());
+
+        function turnRed() {
+          pass.style.background = "red";
+        }
+        ```
+    - Change merupakan event yang terjadi ketika user memasukkan pilihan dalam opsi yang ada pada select element sehingga tampil pilihan yang mereka pilih. Event ini juga berlaku pada radiobutton dan sceckbox, event akan terjadi ketika user telah memasukkan input mereka. Contoh penggunaan: 
+        ```
+        let pilih = document.getElementById("mobil").value;
+        pilih.addEventListener("change", berubah());
+
+        function berubah() {
+        document.getElementById("messageBox").innerText = "anda telah memilih" + pilih;
+        }
+        ```
+    - Scroll merupakan event yang terjadi ketika user melakukan scroll pada sebuah div di dalam sebuah HTML. Contoh penggunaan:
+        ```
+        let pilih = document.getElementById("mobil").value;
+        pilih.addEventListener("change", berubah());
+
+        function berubah() {
+          document.getElementById("messageBox").innerText = "anda telah memilih" + pilih;
+        }
+
+        ```
