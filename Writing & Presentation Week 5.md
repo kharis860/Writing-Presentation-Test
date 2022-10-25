@@ -21,8 +21,9 @@
     npx create-react-app nama-Aplikasi
     ```
 - Berikut adalah proses instalasi yang saya lakukan:
-![gambar](https://user-images.githubusercontent.com/83742894/197824795-d9398e91-6b2d-435f-9e4c-18e5ae22a774.png)
-![gambar](https://user-images.githubusercontent.com/83742894/197824812-6748badb-7699-425c-9b44-76228e0b30f4.png)
+
+    ![gambar](https://user-images.githubusercontent.com/83742894/197824795-d9398e91-6b2d-435f-9e4c-18e5ae22a774.png)
+    ![gambar](https://user-images.githubusercontent.com/83742894/197824812-6748badb-7699-425c-9b44-76228e0b30f4.png)
 
 - Jika tampilan sudah seperti ini dan terdapat notifikasi Happy hacking berarti project kita sudah selesai dibuat dan kita bisa mulai mengerjakan project kita. 
 - Ketika kita mengerjakan project tersebut, kita harus mengaktifkan live server milik react untuk melihat progress dari aplikasi kita dengan perintah:
