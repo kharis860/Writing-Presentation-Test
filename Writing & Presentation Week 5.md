@@ -1,4 +1,4 @@
-# Writing & Presentation Test Week 5
+# Writing & Presentation Test Week 6
 
 ## Intro to React JS
 
@@ -158,4 +158,183 @@
 - maka dari itu ketika membuat sebuah variable data kita harus membuatnya menggunakan state dan useState yang bisa kita panggil ke dalam sebuah function yang nantinya akan berjalan pada button yang kita beri perintah onClick. Sebelum menggunakan useState kita harus melakukan import terlebih dahulu dengan cara sebagai berikut: 
     ```
     import { useState } from "react";
+    ```
+## Handle Event
+- Pembahasan selanjutnya adalah handle event. Handle event merupakan bagaimana kita membuat program yang dapat menangani keadaan dari adanya input yang dimasukkan oleh user ke dalam website yang kita miliki. Penggunaan yang paling umum adalah berada di dalam sebuah button
+### Bagaimana meng-handle event React JS
+- Ketika kita membuat variable biasa di dalam react maka akan bersifat emmutable, maksud dari emmutable ini adalah data tersebut tidak dapat berubah dengan begitu saja ketika kita olah dengan metode biasa lalu kita tampilkan ke dalam tampilan HTML kita. 
+- maka dari itu ketika membuat sebuah variable data kita harus membuatnya menggunakan state dan useState yang bisa kita panggil ke dalam sebuah function yang nantinya akan berjalan pada button yang kita beri perintah onClick. Sebelum menggunakan useState kita harus melakukan import terlebih dahulu dengan cara sebagai berikut: 
+    ```
+    import { useState } from "react";
+    ```
+- Contoh pendeklarasian useState:
+    ```
+    function NamaFunction() {
+      let [variable,setVariable]= usestate("nilai awal")
+    }
+    ```
+- Sedangkan, untuk penggunaan handle event pada button adalah menggunakan properties onClick untuk memanggil function yang berisi useState yang telah kita buat:
+    ```
+    <button onClick={nambah}>+</button>
+    ```
+- Data yang ada di dalam state tidak mungkin tidak berubah di dalam pengolahan data, maka kita bisa mengubah data yang ada di dalam useState menggunakan variable set yang biasanya dideklarasikan dengan “setVariable” untuk mengubah nilai awal dari sebuah useState. Contoh penggunaan setVariable:
+    ```
+    function nambah() {
+        setVariable(variable + 1);
+      }
+    ```
+### Render dan Conditional Render
+- Setiap code yang kita tuliskan di dalam project React sebelum ditampilkan ke dalam sebuah website pasti melewati proses render terlebih dahulu. Namun, kita dapat mengatur kondisional dari code mana saja yang ingin kita tampilkan di dalam tampilan website kita di dalam keadaan tertentu. Conditional render salah satunya bisa dilakukan menggunakan operator ternary
+- Ternary merupakan sebuah operator yang ada di dalam bahasa pemrograman JavaScript yang dapat digunakan di dalam pengkondisian di dalam project React yang kita miliki. Operand dari operator ternary akan menjalankan kondisi sebelum colon (:) dan akan menjalankan kondisi yang terdapat setelah colon (:) jika bernilai false. Contoh penggunaan ternary di dalam melakukan conditional render adalah sebagai berikut: 
+    ```
+    import "./App.css";
+    import User from "./components/User";
+    import { useState } from "react";
+    function App() {
+      let [isLogin, setIsLogin] = useState(false);
+      return (
+        <div>
+          <h1 className="profil-header">haloo</h1>
+          <button onClick={() => setIsLogin(true)}>login</button>
+          {isLogin ? <User /> : <span>Anda belum login</span>}
+        </div>
+      );
+    }
+    
+    export default App;
+    ```
+- karena state isLogin pada code di atas masih bernilai false, maka operator ternary akan menampilkan opsi kedua yaitu berupa teks “Anda belum login”. Nantinya ketika tombol sudah ditekan dan mengubah state isLogin menjadi true, barulah dirender opsi pertama di dalam operator ternary
+
+## Component Lifecycle
+### Component Lifecyle dan Penggunaannya
+- Component ketika tampil di dalam sebuah project React. Ia memiliki sebuah siklus hidup mulai dari ia tampil, mengalami update, hingga menghilang dikarenakan sebuah kondisional tertentu. Di dalam component life cycle, hal ini biasa disebut dengan fase mount, update dan unmout. 
+- terdapat 2 cara pembuatan component:
+    1. Function Component
+    2. Class Component
+- Yang menjadi perbedaan antara function component dan class component adalah dibagian cara pendeklarasiannya dan tahap lifecyclenya yang agak berbeda. Perbedaan life cycle yang terdapat pada class component adalah dimana terdapat istilah lifecycle seperti componentDidMount, ComponentDidUpdate dan componentWillUnmount.
+- Terdapat 3 lifecyle yang dialami oleh component di dalam React yaitu:
+    1. Mount: munculnya sebuah komponen ke dalam sebuah tampilan website
+    2. Update: perubahan data yang ada di dalam component tersebut
+    3. Unmount: menghilangnya sebuah komponen dari sebuah tampilan website
+- Penjelasan diatas adalah terkait pengertian dari masing-masing lifecycle. Sedangkan, untuk contoh dari penggunaan masing-masing life cycle pada project react adalah:
+    1. Mount: mengambil data dari API
+    2. Update: munculnya komponen lain di sebuah halaman
+### Side Effect
+- Tiap komponen yang telah kita buat dapat kita beri sebuah side effect di dalamnya. Side effect merupakan code yang berada component yang dijalankan setelah function utama di jalankan. Side effect juga dapat digunakan untuk memberikan suatu effect setelah user berinteraksi pada sebuah tampilan website. Untuk memakai side effect kita harus memanggil function useEffect ke dalam file component yang kita miliki. Contoh penggunaan side effect adalah sebagai berikut:
+    ```
+    import { useEffect } from "react";
+    
+    function namaComponent() {
+      useEffect(() => {
+        <h1>ini adalah side effect</h1>;
+      });
+      return (
+        <>
+          <h1>isi</h1>
+        </>
+      );
+    }
+    ```
+- Urutan React JS dalam merender sebuah component yang terdapat sebuah side effect di dalamnya yaitu dimulai dengan merender isi function, setelah itu merender isi dari return. Setelah semuanya dirender barulah giliran side effect untuk dirender. Jadi, biasanya side effect ini dirender terakhir kali di dalam sebuah component. Untuk visualisasnya agar dapat lebih mudah dipahami, bisa kita lihat pada tampilan console di bawah ini: 
+
+    ![gambar](https://user-images.githubusercontent.com/83742894/198953300-d5200052-122b-4284-af93-cfe26a2ab193.png)
+
+- Use effect merupakan function yang kita panggil dari react, jadi harus kita deklarasikan terlebih dahulu di atas menggunakan perintah:
+    ```
+    import { useState } from "react";
+    ```
+- ketika kita menggunakan side effect hanya untuk mounting saja (hanya tampil sekali di awal rendering), maka kita harus menambahkan dependensi berupa array kosong setelah penulisan callback. Dapat kita lihat pada contoh berikut:
+    ```
+    useEffect(() => {
+        console.log("ini adalah side effect");
+      }, []); //ini adalah dependensi yang ditulis setelah callback
+    ```
+- Jika kita tidak menambahkan dependensi tersebut, maka side effect akan terus dirender dan bisa digunakan pada life cycle mount dan update.
+### Fetch menggunakan Axios
+- Di dalam React JS kita juga dapat melakukan fetch data dari sumber eksternal sama seperti saat kita menggunakan vanilla JS. Tetapi React JS sudah menyediakan sebuah library khusus yang lebih simpel untuk digunakan daripada menggunakan fungsi fetch yaitu menggunakan axios. Untuk menggunakannya kita harus menginstall axios pada project kita terlebih dahulu dengan perintah: 
+    ```
+    npm install axios
+    ```
+- Sedangkan contoh penggunaan axios untuk mengambil/fetch data dari sumber eksternal adalah sebagai berikut:
+    ```
+    axios("https://digimon-api.vercel.app/api/digimon").then((res) => {
+          setDigimons(res.data);
+        });
+    ```
+- Merupakan tambahan fitur yang ada mulai React 16.8. kita bisa memakai sebuah state dan fitur react lainnya tanpa menuliskan sebuah class. biasanya use ditandai dengan adanya penulisan “use”. ini merupakan fitur yang disediakan untuk fungsional component
+
+## Form Handle React JS
+- React JS sudah memaparkan di dalam dokumentasi mereka bagaimana caranya membuat sebuah form di dalam project React. Dimana kita bisa menghandle form dengan lebih simpel di dalam project react jika dibandingkan dengan vanilla JS. Alasannya adalah karena kita tidak perlu melakukan getElement ke dalam code HTML, melainkan kita bisa langsung melakukan logic di dalam code HTML tersebut menggunakan properties onChange dan onSubmit pada form
+- Tetapi, di dalam penulisan properties label di dalam form terdapat beberapa perbedaan. Seperti properties name pada input, jika pada HTML biasa kita menggunakan name maka di React kita menggunakan properties HTMLfor
+    ```
+    <label htmlFor="nama">Nama</label>
+    ```
+- Kita juga harus menambahkan properties tambahan di dalam tag unput berupa value{}, yang nantinya variable di dalamnya dideklarasikan menggunakan useState
+    ```
+    import { useState } from "react";
+    function Form() {
+      const [nama, setNama] = useState("");
+      return (
+        <>
+          <h1>Form identitas</h1>
+          <form action="">
+            <label htmlFor="nama">Nama</label>
+            <input type="text" value={nama} />
+          </form>
+        </>
+      );
+    }
+    
+    export default Form;
+    ```
+- kemudian, karena form yang kita miliki masih satu arah. Kita harus menambahkan properties onChange yang nantinya diberi sebuah callback yang memanggil setter dari useState agar kita dapat menyimpan data yang telah diinputkan user ke dalam state yang telah kita buat sebelumnya.
+    ```
+    <input type="text" value={nama} onChange={(e) => setNama(e.target.value)} />
+    ```
+- Agar kita dapat menampilkan sebuah event ke dalam tampilan web kita, maka kita harus memberikan sebuah function yang isinya sebuah event yang dipanggil melalui properties onSubmit pada tag form
+    ```
+      function handleEvent(e) {
+        e.preventDefault();
+      }
+      return (
+        <>
+          <h1>Form identitas</h1>
+          <form action="" onSubmit={handleEvent}>
+    ```
+- Sedangkan, jika kemarin kita pada vanilla JS kita menggunakan function reset kepada element form yang sudah di getElement. Di project react kita bisa mengatur setter dari setiap form menjadi sebuah form yang bernilai string kosong pada function yang menghandle form
+    ```
+    function handleEvent(e) {
+        e.preventDefault();
+        alert(`nama ${nama} alamat ${alamat}`);
+        setNama("");
+        setAlamat("");
+      }
+    ```
+- Lalu, untuk menangkap inputan tersebut kita harus membuat state baru yang di dalamnya berbentuk objek.
+    ```
+      const [data, setData] = useState({});
+      console.log(nama, alamat);
+      function handleEvent(e) {
+        e.preventDefault();
+        alert(`nama ${nama} alamat ${alamat}`);
+        setData({ nama: nama, alamat: alamat });
+        setNama("");
+        setAlamat("");
+      }
+    ```
+- Jika sudah seperti ini kita bisa menampilkan data yang telah diinput dalam form menggunakan format pemanggilan objek, seperti berikut:
+    ```
+          <h1>nama</h1>
+          <h1>{data.nama}</h1>
+          <h1>alamat</h1>
+          <h1>{data.alamat}</h1>
+    ```
+- Yang perlu menjadi catatan adalah terdapat penulisan yang agak berbeda jika kita menggunakan dropdown. Kita harus memberikan setiap value pada optionnya dan  value tersebut nantinya akan ditangkap oleh state yang berada pada tag select
+    ```
+    <select value={program} onChange={(e) => setProgram(e.target.value)}>
+              <option value="">Pilih program</option>
+              <option value="studi independen">studi independen</option>
+              <option value="magang">magang</option>
+            </select>
+    
     ```
