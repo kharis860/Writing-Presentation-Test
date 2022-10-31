@@ -88,3 +88,74 @@
     ```
     import nama-fungtion from “route file”
     ```
+## React JS Component
+### Penggunaan Component
+- Component pada React JS merupakan sebuah potongan kode yang berdiri sendiri dan dapat dipakai ulang di dalam project React. Kita membuat komponen agar kita dapat memecah tampilan halaman menjadi bagian bagian kecil, dengan tujuan nantinya komponen tersebut dapat dipakai di halaman lainnya tanpa membuat kembali
+- Component dapat dipakai ketika kita membutuhkan suatu tampilan UI yang harus di tampilkan di beberapa halaman/section yang berbeda, namun memiliki tampilan yang sama hanya saja memiliki isi data yang berbeda
+### Penggunaan Props dan State
+- Props merupakan argumen yang ada di dalam component yang berfunsgi untuk menangkap data yang penggunaannya seperti attribute pada HTML, props digunakan untuk melakukan pengiriman dan penerimaan data antar component di dalam project React. Penggunaan props adalah sebagai berikut: 
+    ```
+    function Card(props) {
+      return (
+        <div>
+          <h2>{props.nama}</h2>
+          <p>{props.umur}</p>
+        </div>
+      );
+    }
+    
+    export default Card;
+    ```
+- di dalam memanggil data yang ditangkap menggunakan props. Selain menggunakan cara diatas, kita juga dapat menggunakan destrukturisasi dalam pengambilan datanya seperti berikut: 
+    ```
+    function Card({ nama, umur }) {
+      return (
+        <div>
+          <h2>{nama}</h2>
+          <p>{umur}</p>
+        </div>
+      );
+    }
+    
+    export default Card;
+    ```
+- State merupakan data lokal yang terdapat pada sebuah component. Sebuah componen yang memiliki state dapat disebut dengan stateful component. Sedangkan component yang tidak memiliki state disebut dengan stateless dan hanya memiliki props saja. Ini adalah contoh dari stateless component: 
+    ```
+    function Card({nama}) {
+      return (
+        <div>
+          <h2>{nama}</h2>
+        </div>
+      );
+    }
+    
+    export default Card;
+    ```
+### React JS Bootstrap
+- Kita dapat menyisipkan framework bootstrap ke dalam project react kita. Dalam menyisipkannya kita dapat memilih beberapa cara yang sudah disediakan oleh React dan Bootstrap. Kita dapat menginstall bootstrap terhadap project kita menggunakan perintah di dalam terminal:
+    ```
+    npm install react-bootstrap bootstrap
+    ```
+- bisa menggunakan link CDN menggunakan link reel pada file index.html, begitu juga jika ingin menambahkan css secara manual tanpa menggunakan import export. Jika menyisipkan bootstrap menggunakan link CDN kita harus memasukkan URL berikut ke dalam file index.html.
+- URL CSS
+    ```
+    https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css
+    ```
+- URL JS
+    ```
+    https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js
+    ```
+- Kita juga bisa menyisipkan bootstrap menggunakan import pada file index.html, perintah untuk import bootstrap adalah sebagai berikut:
+    ```
+    import 'bootstrap/dist/css/bootstrap.css'
+    ```
+- Yang menjadi catatan ketika akan menggunakan bootstrap kita harus memilih salah satu agar tidak terjadi conflict
+
+## Handle Event
+- Pembahasan selanjutnya adalah handle event. Handle event merupakan bagaimana kita membuat program yang dapat menangani keadaan dari adanya input yang dimasukkan oleh user ke dalam website yang kita miliki. Penggunaan yang paling umum adalah berada di dalam sebuah button
+### Bagaimana meng-handle event React JS
+- Ketika kita membuat variable biasa di dalam react maka akan bersifat emmutable, maksud dari emmutable ini adalah data tersebut tidak dapat berubah dengan begitu saja ketika kita olah dengan metode biasa lalu kita tampilkan ke dalam tampilan HTML kita. 
+- maka dari itu ketika membuat sebuah variable data kita harus membuatnya menggunakan state dan useState yang bisa kita panggil ke dalam sebuah function yang nantinya akan berjalan pada button yang kita beri perintah onClick. Sebelum menggunakan useState kita harus melakukan import terlebih dahulu dengan cara sebagai berikut: 
+    ```
+    import { useState } from "react";
+    ```
