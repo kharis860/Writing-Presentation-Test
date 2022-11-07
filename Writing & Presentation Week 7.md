@@ -376,7 +376,71 @@ StudentInfo.propTypes = {
     ```
 
 ## React Thunk
-
+- Secara default proses memasukkan data ke dalam reducer malalui dispatch hanya bisa menggunakan proses syncronous (tidak ada delay). Namun, ada kalanya kita harus menggunakan proses asyncronous seperti axios dan fetch sehingga menyebabkan masalah di program kita. Solusi yang dapat digunakan adalah menggunakan thunk agar program kita dapat berjalan dengan normal. 
+### Install dan Import React Thunk
+- Thunk merupakan sebuah function di dalam React JS Redux yang digunakan untuk membawa atau menjalankan asyncronous logic ke dalam reducer. Untuk menggunakan thunk, pertama kita harus menginstall thunk terlebih dahulu menggunakan perintah: 
+    ```
+    Npm install redux-thunk
+    ```
+- Jika sebelumnya kita menjalankan fetch data dari API menggunakan axios di dalam useEffect langsung di dalam component, jika menggunakan thunk maka kita harus melakukan fetch data menggunakan axios di dalam action. Kemudian action ini nantinya dibawa oleh dispatch ke dalam reducer 
+- Setelah melakukan install thunk, sebelum menggunakannya kita harus melakukan import middleware terlebih dahulu menggunakan perintah:
+    ```
+    import { createStore, combineReducers, applyMiddleware } from "redux";
+    ```
+### Menggunakan Thunk ke dalam Project React
+- Setelah itu, kita dapat memasukkan thunk yang kita miliki ke dalam middleware yang sebelumnya sudah kita import ke dalam project React. Middleware ini nantinya akan membawa thunk ke dalam store bersama combine reducer seperti berikut:
+    ```
+    const allReducer = combineReducers({
+      todo: todoReducer,
+    });
+    
+    const store = createStore(allReducer, applyMiddleware(thunk));
+    ```
+- Selanjutnya kita membuat action yang memiliki proses asyncronous terlebih dahulu. Kita membuat sebuah action yang memiliki return berupa sebuah function dengan parameter sebuah dispatch yang nantinya akan membawa function berisi action type.
+### Alasan Penggunaan Thunk pada Project React
+- Alasan penggunaan thunk menggunakan applyMiddleware pada store yaitu dikarenakan kita akan menggunakan proses asyncronous yang nantinya di jalankan pada file action: 
+    ```
+    import { createStore, combineReducers, applyMiddleware } from "redux";
+    import thunk from "thunk";
+    import todoReducer from "../reducer/todoReducer";
+    
+    const allReducer = combineReducers({
+      todo: todoReducer,
+    });
+    
+    const store = createStore(allReducer, applyMiddleware(thunk));
+    ```
+- dengan begitu, kita bisa melakukan proses asyncronous di dalam action yang terhubung ke reducer sebagai file yang berisi pengolahan data:
+    ```
+    import axios from "axios";
+    
+    export const GET_TODO = "GET_TODO";
+    export const FETCH_START = "FETCH_START";
+    export const SUCCES = "SUCCES";
+    
+    function fetchStart() {
+      return {
+        type: FETCH_START,
+      };
+    }
+    
+    function succes() {
+      return {
+        type: SUCCES,
+        payload: data,
+      };
+    }
+    export const getTodo = () => {
+      return async (dispatch) => {
+        dispatch(fetchStart());
+    
+        const hasil = await axios.get("URL Link");
+        dispatch(succes(result.data));
+      };
+    };
+    
+    ```
+- Return yang bembawa asynconous juga membawa dispatch yang berfungsi untuk mengirimkan data hasil fetch ke dalam store sebelum nantinya bisa diakses oleh masing-masing component untuk ditampilkan datanya
 
 
 
