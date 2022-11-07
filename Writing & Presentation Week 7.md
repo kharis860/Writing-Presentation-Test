@@ -32,12 +32,12 @@
     export default StudentInfo;
     ```
 - Kita juga bisa memberlakukan properties isRequired untuk memvalidasi bahwa sebuah inputan harus memiliki data di dalamnya. Contoh penggunaan: 
-```
-StudentInfo.propTypes = {
-  nama: PropTypes.string,
-  umur: PropTypes.number.isRequired,
-};
-```
+    ```
+    StudentInfo.propTypes = {
+      nama: PropTypes.string,
+      umur: PropTypes.number.isRequired,
+    };
+    ```
 - Di dalam proptypes selain memberikan 1 opsi tipe data untuk sebuah inputan, kita juga bisa memberikan opsi tersebut lebih dari satu, yaitu menggunakan method oneOfType(). Cara penggunaannya adalah sebagai berikut: 
     ```
     StudentInfo.propTypes = {
@@ -296,13 +296,13 @@ StudentInfo.propTypes = {
     const { data } = useSelector((state) => state.todo);
     ```
 - Setelah bisa mengambil datanya, kita bisa menampilkannya di dalam component
-```
-<ul>
-        {data.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-</ul>
-```
+    ```
+    <ul>
+            {data.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+    </ul>
+    ```
 ### Penggunaan Payload
 - Setelah berhasil menampilkan data, kita bisa memasukkan data dari form to do ke dalam redux dan ikut di tampilkan ke dalam list. Untuk melakukannya kita harus menambahkan dan membuat action terlebih dahulu, sebelum nantinya kita harus membuat payload ke dalam reducer untuk menghandle datanya ke dalam redux. 
 - Membuat action
